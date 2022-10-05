@@ -11,6 +11,8 @@ const CalendarsList = () => {
       testID={testIDs.calendarList.CONTAINER}
       current={'2020-06-10'}
       pastScrollRange={24}
+      showWeekNumbers
+    
       futureScrollRange={24}
       renderHeader={(date) => {
         const header = date.toString('MMMM yyyy');
@@ -55,6 +57,9 @@ const CalendarsList = () => {
           }
         }
       }}
+      // renderMonthInWeekNumber={() => (
+      //   <View style={{backgroundColor:'red', width: 50, height: 50}}/>
+      // )}
     />);
 
 };
