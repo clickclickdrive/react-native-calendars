@@ -51,7 +51,9 @@ class CalendarList extends Component {
     /** Whether to use static header that will not scroll with the list (horizontal only) */
     staticHeader: PropTypes.bool,
     /** A custom key extractor for the generated calendar months */
-    keyExtractor: PropTypes.func
+    keyExtractor: PropTypes.func,
+    /** Render month component in the top of the weeknumber. */
+    renderMonthInWeekNumber: PropTypes.any
   }
 
   static defaultProps = {
@@ -217,6 +219,7 @@ class CalendarList extends Component {
         calendarWidth={this.props.horizontal ? this.props.calendarWidth : undefined}
         {...this.props}
         style={this.props.calendarStyle}
+        renderMonthInWeekNumber={this.props.renderMonthInWeekNumber}
       />
     );
   }
@@ -268,7 +271,7 @@ class CalendarList extends Component {
       if (this.props.showIndicator) {
         indicator = <ActivityIndicator color={this.props.theme && this.props.theme.indicatorColor}/>;
       }
-
+      
       return (
         <CalendarHeader
           style={[this.style.staticHeader, this.props.headerStyle]}
@@ -287,6 +290,7 @@ class CalendarList extends Component {
           testID={STATIC_HEADER}
           accessibilityElementsHidden={true} // iOS
           importantForAccessibility={'no-hide-descendants'} // Android
+          renderMonthInWeekNumber={this.props.renderMonthInWeekNumber}
         />
       );
     }

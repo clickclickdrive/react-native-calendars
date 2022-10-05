@@ -87,6 +87,7 @@ class CalendarListItem extends Component {
           importantForAccessibility={this.props.importantForAccessibility} // Android
           renderHeader={this.props.renderHeader}
           disableAllTouchEventsForDisabledDays={this.props.disableAllTouchEventsForDisabledDays}
+          renderMonthInWeekNumber={this.props.renderMonthInWeekNumber}
         />
       );
     } else {
