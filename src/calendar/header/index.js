@@ -215,7 +215,7 @@ class CalendarHeader extends Component {
         {!this.props.hideDayNames &&
           <View style={this.style.week}>
             {this.props.weekNumbers &&
-            this.props.renderMonthInWeekNumber ? this.props.renderMonthInWeekNumber():
+            this.props.renderMonthInWeekNumber ? this.props.renderMonthInWeekNumber(this.props.month):
               <Text allowFontScaling={false} style={this.style.dayHeader}></Text>
             }
             {this.renderWeekDays(weekDaysNames)}
